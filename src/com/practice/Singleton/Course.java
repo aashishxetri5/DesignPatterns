@@ -8,7 +8,7 @@ import java.io.Serializable;
 /**
  * @author asus
  */
-public class Course implements Serializable {
+public class Course implements Serializable, Cloneable {
 
 	private static final long serialVersionUID = -2659787488015681408L;
 	private static Course course;
@@ -30,4 +30,10 @@ public class Course implements Serializable {
 		return course;
 	}
 
+	@Override
+	public Object clone() throws CloneNotSupportedException {
+//		return super.clone();
+//		Solution:
+		return course;
+	}
 }

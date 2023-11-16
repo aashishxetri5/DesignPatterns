@@ -76,7 +76,7 @@ public class App {
 			ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("abc.ob"));
 			oos.writeObject(c);
 
-			System.out.println("Serialization Done");
+			System.out.println("Serialization Done\nNow Deserializing:");
 
 			ObjectInputStream ois = new ObjectInputStream(new FileInputStream("abc.ob"));
 			Course c2 = (Course) ois.readObject();
@@ -86,6 +86,13 @@ public class App {
 			oos.close();
 			ois.close();
 		} catch (IOException | ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+
+		try {
+			Course c3 = (Course) c.clone();
+			System.out.println("Hashcode of c3(cloned): " + c3.hashCode());
+		} catch (CloneNotSupportedException e) {
 			e.printStackTrace();
 		}
 
