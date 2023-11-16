@@ -8,12 +8,9 @@ import java.io.Serializable;
 /**
  * @author asus
  */
-public class Course implements Serializable	 {
+public class Course implements Serializable {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -9127137378256342428L;
+	private static final long serialVersionUID = -2659787488015681408L;
 	private static Course course;
 
 	private Course() {
@@ -26,6 +23,10 @@ public class Course implements Serializable	 {
 				course = new Course();
 			}
 		}
+		return course;
+	}
+
+	public Object readResolve() {
 		return course;
 	}
 

@@ -86,9 +86,7 @@ public class App {
 			oos.close();
 			ois.close();
 		} catch (IOException | ClassNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
-		} finally {
 		}
 
 	}
